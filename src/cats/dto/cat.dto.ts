@@ -1,5 +1,4 @@
-export // DTO for create cat
-class CreateCatDTO {
+export class CreateCatDTO {
     name: string;
     age:number;
     bread:string;
