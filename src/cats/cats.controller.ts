@@ -1,4 +1,4 @@
-import { Body, Controller,Get, HttpCode, Param, Post, Query } from "@nestjs/common";
+import { Body, Controller,ForbiddenException,Get, HttpCode, HttpException, HttpStatus, Param, Post, Query } from "@nestjs/common";
 import { CreateCatDTO } from "./dto/cat.dto";
 import { CatService } from "./cats.service";
 
@@ -19,6 +19,7 @@ export class CatController {
 
   @Get()
    findWithNameAndAge(@Query('name') name:string, @Query('age') age:number): string {
+    throw new ForbiddenException();
     return `The name is ${name} and age is ${age}`;
   }
 
